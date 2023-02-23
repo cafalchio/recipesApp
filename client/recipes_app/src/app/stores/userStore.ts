@@ -23,6 +23,23 @@ export default class UserStore {
         router.navigate("/");
     };
 
+    login = async (user: User) => {
+        try {
+            const response = await agent.Accounts.login(user);
+            runInAction(() => {
+                if (response) {
+                    this.user = response;
+                    console.log("Response: ", JSON.stringify(response));
+                    // store.commonStore.setToken(response.token);
+                    // store.modalStore.closeModal();
+                    router.navigate("/recipes");
+                }
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     // getUser = async () => {
     //     try {
     //         const response = await agent.Users.current();

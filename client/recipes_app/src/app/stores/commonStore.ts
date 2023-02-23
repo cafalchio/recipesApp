@@ -4,4 +4,12 @@ export default class CommonStore {
     constructor() {
         makeAutoObservable(this);
     }
+
+    token: string | null = window.localStorage.getItem("jwt");
+
+    setToken = (token: string | null) => {
+        window.localStorage.setItem("jwt", token!);
+        this.token = token;
+    }
+
 }

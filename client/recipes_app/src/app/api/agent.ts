@@ -50,6 +50,7 @@ const requests = {
 };
 
 const Accounts = {
+    login : (user: User) => requests.post<any>("/token/", user),
     createUser : (user: User) => requests.post("/accounts", user),
     refreshToken: () => requests.post("/token/refresh", {}),
 };
