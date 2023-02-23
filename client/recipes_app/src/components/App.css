@@ -45,3 +45,7 @@ code {
   background: #dee2dd !important;
   height: 3.5rem;
 }
+
+.ui.borderless.fluid.top.attached.ui.blue.buttons.menu {
+  border: none;
+}

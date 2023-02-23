@@ -1,6 +1,6 @@
 import { makeAutoObservable, runInAction } from "mobx";
-import { Recipe } from "../models/recipe";
-import agent from "../api/agent";
+import { Recipe } from "../../app/models/recipe";
+import agent from "../../app/api/agent";
 
 export default class RecipeStore {
     recipes: Recipe[] = [];

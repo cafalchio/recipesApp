@@ -1,7 +1,7 @@
 
 import { makeAutoObservable, runInAction } from "mobx";
-import agent from "../api/agent";
-import { User } from "../models/user";
+import agent from "../../app/api/agent";
+import { User } from "../../app/models/user";
 import { router } from "../router/Routes";
 // import { CreateUser, User } from "../models/user";
 // import { router } from "../router/Routes";
