@@ -1,8 +1,8 @@
 import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
-import RegisterForm from '../../components/RegisterForm';
+import RegisterForm from '../../components/registerForm/RegisterForm';
 import App from '../../components/App'
-import NotFound from "../../components/NotFound";
-import ServerError from "../../components/ServerError";
+import NotFound from "../../components/errors/NotFound";
+import ServerError from "../../components/errors/ServerError";
 import LoginForm from '../../components/users/LoginForm';
 import HomePage from '../../components/homepage/HomePage';
 
