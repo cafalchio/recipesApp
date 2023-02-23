@@ -11,7 +11,8 @@ export default function Navbar() {
     }
 
     return (
-        <Menu  borderless={true} attached={"top"} fluid={true} className="ui blue buttons">
+        <Menu  borderless={true} attached={"top"} fluid={true} className="ui blue buttons"
+        >
         <Menu.Item className="navbar-item"
         icon="home"
         Link={true}
