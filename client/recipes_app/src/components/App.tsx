@@ -1,13 +1,16 @@
-import RegisterForm from './RegisterForm';
 import 'semantic-ui-css/semantic.min.css'
+import './App.css'
+
+
+import { Outlet, Navigate, Link } from 'react-router-dom';
+import Navbar from './navbar/Navbar';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-       <h1>Test</h1>
-       
-      </header>
+    <div>
+      <Navbar />
+      <Outlet /> {/* Render child routes */}
     </div>
   );
 }

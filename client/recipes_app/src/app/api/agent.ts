@@ -19,26 +19,10 @@ axios.interceptors.response.use(
         return response as AxiosResponse<any>;
     },
     (error: AxiosError) => {
-        const { data, status, config } = error.response as AxiosResponse;
+        const { status } = error.response as AxiosResponse;
         switch (status) {
             case 400:
-                if (
-                    config.method === "get" &&
-                    data.errors.hasOwnProperty("id")
-                ) {
-                    router.navigate("/not-found");
-                }
-                if (data.errors) {
-                    const modalStateErrors = [];
-                    for (const key in data.errors) {
-                        if (data.errors[key]) {
-                            modalStateErrors.push(data.errors[key]);
-                        }
-                    }
-                    throw modalStateErrors.flat();
-                } else {
-                    console.log(data);
-                }
+                console.log("bad request");
                 break;
             case 401:
                 console.log("unauthorised");
@@ -66,15 +50,14 @@ const requests = {
 };
 
 const Accounts = {
-    createUser : (user: User) => requests.post("/accounts/", user),
+    createUser : (user: User) => requests.post("/accounts", user),
     refreshToken: () => requests.post("/token/refresh", {}),
-
 };
 
 const Recipes = {
-    list: () => requests.get<Recipe[]>("/recipes/"),
+    getRecipes: () => requests.get<any>("/recipes"),
+    getDetail: (id: string) => requests.get<Recipe>(`/recipes/${id}`),
 };
-
 
 const agent = {
     Accounts,

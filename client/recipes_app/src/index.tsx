@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './components/App';
 import reportWebVitals from './reportWebVitals';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './app/router/Routes';
+import { StoreContext, store } from './app/stores/store';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <StoreContext.Provider value={store}> {/* mobx stores */}
+    <RouterProvider router={router} /> {/* router-dom */}
+    </StoreContext.Provider>
   </React.StrictMode>
 );
 
