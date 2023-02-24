@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik";
-import MyTextInput from "./MyTextInput";
 import { Button } from "semantic-ui-react";
 import { useStore } from "../../stores/store";
+import MyTextInput from "./MyTextInput";
 
 export default function LoginForm() {
     const { userStore } = useStore();
@@ -17,8 +17,8 @@ export default function LoginForm() {
         >
         {({handleSubmit}) => (
             <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
-                <MyTextInput name='email' placeholder='Email' label={""} />
-                <MyTextInput name='password' placeholder='Password' type='password' label={""} />
+                <MyTextInput name='email' placeholder='Email'  />
+                <MyTextInput name='password' placeholder='Password' type='password'/>
                 <Button positive content='Login' type='submit' fluid />
             </Form>
         )}

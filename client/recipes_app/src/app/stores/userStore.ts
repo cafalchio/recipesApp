@@ -1,7 +1,7 @@
 
 import { makeAutoObservable, runInAction } from "mobx";
 import agent from "../../app/api/agent";
-import { User } from "../../app/models/user";
+import { CreateUser, User } from "../../app/models/user";
 import { router } from "../router/Routes";
 import { store } from "./store";
 
@@ -49,7 +49,7 @@ export default class UserStore {
         }
     };
 
-    createUser = async (user: User) => {
+    createUser = async (user: CreateUser) => {
         try {
             runInAction(() => {
                 agent.Accounts.createUser(user);

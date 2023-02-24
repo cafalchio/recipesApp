@@ -1,7 +1,7 @@
 import axios, { AxiosError, AxiosResponse } from "axios";
 import { Recipe } from "../models/recipe";
 import { router } from "../router/Routes";
-import { User } from "../models/user";
+import { CreateUser, User } from "../models/user";
 import { Token } from '../models/token';
 
 const sleep = (delay: number) => {
@@ -53,7 +53,7 @@ const requests = {
 const Accounts = {
     login : (user: User) => requests.post<Token>("/token/", user),
     getUser: () => requests.get<User>("/user/"),
-    createUser : (user: User) => requests.post("/register/", user),
+    createUser : (user: CreateUser) => requests.post("/register/", user),
     refreshToken: () => requests.post("/token/refresh/", {}),
 };
 
