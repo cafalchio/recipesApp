@@ -1,7 +1,7 @@
 
 /* from https://typescale.com/ */
 :root {
-  font-size: calc(1em + 0.4vw);
+  font-size: calc(.5em + 0.5vw);
 }
 
 html {font-size: 100%;} /*16px*/
@@ -48,7 +48,7 @@ code {
 
 .ui.menu {
   background: #dee2dd !important;
-  height: 2rem;
+  height: 1.5rem;
   /* width: 100vw; */
 }
 
