@@ -3,6 +3,7 @@ import { makeAutoObservable, runInAction } from "mobx";
 import agent from "../../app/api/agent";
 import { User } from "../../app/models/user";
 import { router } from "../router/Routes";
+import { store } from "./store";
 // import { CreateUser, User } from "../models/user";
 // import { router } from "../router/Routes";
 
@@ -28,10 +29,8 @@ export default class UserStore {
             const response = await agent.Accounts.login(user);
             runInAction(() => {
                 if (response) {
-                    this.user = response;
-                    console.log("Response: ", JSON.stringify(response));
-                    // store.commonStore.setToken(response.token);
-                    // store.modalStore.closeModal();
+                    store.commonStore.setToken(response.refresh);
+                    
                     router.navigate("/recipes");
                 }
             });

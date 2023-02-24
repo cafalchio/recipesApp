@@ -2,6 +2,7 @@ import axios, { AxiosError, AxiosResponse } from "axios";
 import { Recipe } from "../models/recipe";
 import { router } from "../router/Routes";
 import { User } from "../models/user";
+import { Token } from '../models/token';
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -50,7 +51,8 @@ const requests = {
 };
 
 const Accounts = {
-    login : (user: User) => requests.post<any>("/token/", user),
+    login : (user: User) => requests.post<Token>("/token/", user),
+    getUser: (id: string) => requests.get<User>("/accounts/" + id),
     createUser : (user: User) => requests.post("/accounts", user),
     refreshToken: () => requests.post("/token/refresh", {}),
 };

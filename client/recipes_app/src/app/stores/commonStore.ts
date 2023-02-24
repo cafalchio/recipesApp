@@ -12,4 +12,8 @@ export default class CommonStore {
         this.token = token;
     }
 
+    getToken = () => {
+        return window.localStorage.getItem("jwt");
+    }
+
 }
