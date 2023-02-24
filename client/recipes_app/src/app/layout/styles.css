@@ -1,8 +1,13 @@
 
 /* from https://typescale.com/ */
+:root {
+  font-size: calc(1em + 0.4vw);
+}
+
 html {font-size: 100%;} /*16px*/
 
 body {
+  margin: 0;
   background: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 400;
@@ -43,9 +48,8 @@ code {
 
 .ui.menu {
   background: #dee2dd !important;
-  height: 3.5rem;
+  height: 2rem;
+  /* width: 100vw; */
 }
 
-.ui.borderless.fluid.top.attached.ui.blue.buttons.menu {
-  border: none;
-}
+

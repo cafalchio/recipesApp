@@ -1,35 +1,36 @@
 import { useState } from "react";
-import { Input, Menu } from "semantic-ui-react";
-import { Link } from 'react-router-dom';
+import {  Menu } from "semantic-ui-react";
 
 
 export default function Navbar() {
     const [activeItem, setActiveItem] = useState('home')
     const loggedIn = false;
-    const handleItemClick = (e: any, { name }: any) => {
-        setActiveItem(name)
+    const handleItemClick = (e: any) => {
+        // setActiveItem(e.target.name)
+        console.log(e.target.name)
     }
 
     return (
-        <Menu  borderless={true} attached={"top"} fluid={true} className="ui blue buttons"
-        >
+        <Menu  
+          borderless={true}
+          >
         <Menu.Item className="navbar-item"
         icon="home"
-        Link={true}
+        link={true}
         href="/home"
         /> 
         <Menu.Item className="navbar-item"
           name='home'
           active={activeItem === 'home'}
           onClick={handleItemClick}
-          Link={true}
+          link={true}
           href="/home"
         />
         <Menu.Item className="navbar-item"
           name='messages'
           active={activeItem === 'messages'}
           onClick={handleItemClick}
-          Link={true}
+          link={true}
           href="/home"
         />
         <Menu.Item className="navbar-item"

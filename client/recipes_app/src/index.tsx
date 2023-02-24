@@ -5,7 +5,6 @@ import { RouterProvider } from 'react-router-dom';
 import { router } from './app/router/Routes';
 import { StoreContext, store } from './app/stores/store';
 
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
