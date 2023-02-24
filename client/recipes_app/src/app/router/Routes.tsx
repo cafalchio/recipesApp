@@ -1,10 +1,11 @@
 import { createBrowserRouter, Navigate, RouteObject } from "react-router-dom";
-import RegisterForm from '../../components/registerForm/RegisterForm';
-import App from '../../components/App'
-import NotFound from "../../components/errors/NotFound";
-import ServerError from "../../components/errors/ServerError";
-import LoginForm from '../../components/users/LoginForm';
-import HomePage from '../../components/homepage/HomePage';
+import NotFound from "../components/errors/NotFound";
+import ServerError from "../components/errors/ServerError";
+import HomePage from "../components/homepage/HomePage";
+import RegisterForm from "../components/registerForm/RegisterForm";
+import LoginForm from "../components/users/LoginForm";
+import App from "../App";
+
 
 export const routes: RouteObject[] = [
     {

@@ -1,7 +1,7 @@
 import { Form, Formik } from "formik";
 import MyTextInput from "./MyTextInput";
 import { Button } from "semantic-ui-react";
-import { useStore } from "../../app/stores/store";
+import { useStore } from "../../stores/store";
 
 export default function LoginForm() {
     const { userStore } = useStore();
