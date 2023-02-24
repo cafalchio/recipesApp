@@ -4,8 +4,6 @@ import agent from "../../app/api/agent";
 import { User } from "../../app/models/user";
 import { router } from "../router/Routes";
 import { store } from "./store";
-// import { CreateUser, User } from "../models/user";
-// import { router } from "../router/Routes";
 
 export default class UserStore {
     user: User | null = null;
@@ -19,7 +17,7 @@ export default class UserStore {
     }
 
     logout = () => {
-        // store.commonStore.setToken(null);
+        store.commonStore.setToken(null);
         this.user = null;
         router.navigate("/");
     };
@@ -30,7 +28,6 @@ export default class UserStore {
             runInAction(() => {
                 if (response) {
                     store.commonStore.setToken(response.refresh);
-                    
                     router.navigate("/recipes");
                 }
             });
@@ -39,18 +36,18 @@ export default class UserStore {
         }
     };
 
-    // getUser = async () => {
-    //     try {
-    //         const response = await agent.Users.current();
-    //         runInAction(() => {
-    //             this.user = response.data;
-    //             if (process.env.NODE_ENV === "development")
-    //                 console.log("Response: ", JSON.stringify(response));
-    //         });
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // };
+    getUser = async () => {
+        try {
+            const response = await agent.Accounts.getUser();
+            runInAction(() => {
+                if (response) {
+                    this.user = response;
+                }
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    };
 
     createUser = async (user: User) => {
         try {

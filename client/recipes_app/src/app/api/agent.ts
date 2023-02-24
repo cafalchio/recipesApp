@@ -52,13 +52,13 @@ const requests = {
 
 const Accounts = {
     login : (user: User) => requests.post<Token>("/token/", user),
-    getUser: (id: string) => requests.get<User>("/accounts/" + id),
-    createUser : (user: User) => requests.post("/accounts", user),
-    refreshToken: () => requests.post("/token/refresh", {}),
+    getUser: () => requests.get<User>("/user/"),
+    createUser : (user: User) => requests.post("/register/", user),
+    refreshToken: () => requests.post("/token/refresh/", {}),
 };
 
 const Recipes = {
-    getRecipes: () => requests.get<any>("/recipes"),
+    getRecipes: () => requests.get<any>("/recipes/"),
     getDetail: (id: string) => requests.get<Recipe>(`/recipes/${id}`),
 };
 
