@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {  Menu } from "semantic-ui-react";
 import "./Navbar.css"
+import { Navigate } from 'react-router-dom';
 
 
 export default function Navbar() {
@@ -21,49 +22,49 @@ export default function Navbar() {
           className="navbar-item"
           name='home'
           active={activeItem === 'home'}
-          onClick={handleItemClick}
+          onClick={() => handleItemClick}
           link={true}
           href="/home"
           id="home"
         />
         <Menu.Item className="navbar-item"
-          name='messages'
-          active={activeItem === 'messages'}
-          onClick={handleItemClick}
+          name='recipes'
+          active={activeItem === 'recipes'}
+          onClick={() => handleItemClick}
           link={true}
-          href="/messages"
-          id = "messages"
+          href="/recipes"
+          id = "recipes"
         />
         <Menu.Item className="navbar-item"
-          name='friends'
-          active={activeItem === 'friends'}
-          onClick={handleItemClick}
+          name='about'
+          active={activeItem === 'about'}
+          onClick={() => handleItemClick}
           link={true}
-          href="/friends"
-          id = "friends"
+          href="/about"
+          id = "about"
         />
         <Menu.Menu position='right' >
         {loggedIn? 
             <Menu.Item 
             className="navbar-item-button"
             name='logout'
-            active={activeItem === 'logout'}
           /> : 
           <>
             <Menu.Item 
             className="navbar-item-button"
             name='login'
-            color="blue"
-            active={activeItem === 'login'}
+            onClick={() => handleItemClick}
             link={true}
             href="/login"
+            id = "login"
         /> 
         <Menu.Item 
           className="navbar-item-button"
             name='register'
-            active={activeItem === 'register'}
+            onClick={() => handleItemClick}
             link={true}
             href="/register"
+            id = "register"
         />
         </>}
         </Menu.Menu>

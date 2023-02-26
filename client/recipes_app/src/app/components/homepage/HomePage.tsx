@@ -23,7 +23,7 @@ const recipeList = [
         image: "https://th.bing.com/th/id/R.44396e411022df244b22933e04ebd14a?rik=m08HEhzKK7qW0Q&pid=ImgRaw&r=0"
     },
     {
-        title: 'Chicken Parm',
+        title: 'Chicken Parm1',
         description: 'Chicken Parm',
         cooking_time: '3',
         servings: "4",
@@ -32,7 +32,7 @@ const recipeList = [
         image: "https://bing.com/th?id=AMMS_8d84b7d239c93987e45181aa937a69c9"
     },
     {
-        title: 'Lasagna',
+        title: 'Lasagna1',
         description: 'Lasagna',
         cooking_time: '3',
         servings: "4",
@@ -41,7 +41,7 @@ const recipeList = [
         image: "https://th.bing.com/th/id/R.44396e411022df244b22933e04ebd14a?rik=m08HEhzKK7qW0Q&pid=ImgRaw&r=0"
     },
     {
-        title: 'Chicken Parm',
+        title: 'Chicken Parm2',
         description: 'Chicken Parm',
         cooking_time: '3',
         servings: "4",
@@ -50,7 +50,7 @@ const recipeList = [
         image: "https://bing.com/th?id=AMMS_8d84b7d239c93987e45181aa937a69c9"
     },
     {
-        title: 'Lasagna',
+        title: 'Lasagna2',
         description: 'Lasagna',
         cooking_time: '3',
         servings: "4",
@@ -59,7 +59,7 @@ const recipeList = [
         image: "https://th.bing.com/th/id/R.44396e411022df244b22933e04ebd14a?rik=m08HEhzKK7qW0Q&pid=ImgRaw&r=0"
     },
     {
-        title: 'Chicken Parm',
+        title: 'Chicken Parm3',
         description: 'Chicken Parm',
         cooking_time: '3',
         servings: "4",
@@ -68,7 +68,7 @@ const recipeList = [
         image: "https://bing.com/th?id=AMMS_8d84b7d239c93987e45181aa937a69c9"
     },
     {
-        title: 'Lasagna',
+        title: 'Lasagna3',
         description: 'Lasagna',
         cooking_time: '3',
         servings: "4",
@@ -77,7 +77,7 @@ const recipeList = [
         image: "https://th.bing.com/th/id/R.44396e411022df244b22933e04ebd14a?rik=m08HEhzKK7qW0Q&pid=ImgRaw&r=0"
     },
     {
-        title: 'Chicken Parm',
+        title: 'Chicken Parm4',
         description: 'Chicken Parm',
         cooking_time: '3',
         servings: "4",
@@ -86,7 +86,7 @@ const recipeList = [
         image: "https://bing.com/th?id=AMMS_8d84b7d239c93987e45181aa937a69c9"
     },
     {
-        title: 'Lasagna',
+        title: 'Lasagna5',
         description: 'Lasagna',
         cooking_time: '3',
         servings: "4",
@@ -95,7 +95,7 @@ const recipeList = [
         image: "https://th.bing.com/th/id/R.44396e411022df244b22933e04ebd14a?rik=m08HEhzKK7qW0Q&pid=ImgRaw&r=0"
     },
     {
-        title: 'Chicken Parm',
+        title: 'Chicken Parm6',
         description: 'Chicken Parm',
         cooking_time: '3',
         servings: "4",
@@ -104,7 +104,7 @@ const recipeList = [
         image: "https://bing.com/th?id=AMMS_8d84b7d239c93987e45181aa937a69c9"
     },
     {
-        title: 'Lasagna',
+        title: 'Lasagna7',
         description: 'Lasagna',
         cooking_time: '3',
         servings: "4",
