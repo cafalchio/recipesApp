@@ -46,10 +46,10 @@ code {
 }
 /* end of initial config from https://typescale.com/ */
 
-.ui.menu {
-  background: #dee2dd !important;
-  height: 1.5rem;
-  /* width: 100vw; */
+
+.ui.card, .ui.cards>.card {
+  padding-top: 1rem;
+  width: fit-content;
+  min-width: 280px;
+  border: none;
 }
-
-

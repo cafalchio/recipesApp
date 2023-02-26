@@ -1,0 +1,8 @@
+.recipes-cards-container {
+    margin: 2rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: clamp(280px, 80%, 1200px);
+    gap: 1rem;
+}

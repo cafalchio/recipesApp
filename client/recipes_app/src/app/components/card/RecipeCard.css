@@ -1,0 +1,15 @@
+.recipe-card-wrapper {
+    border: none;
+}
+
+.recipe-card {
+    width: fit-content;
+    align-items: center;
+}
+.recipe-card-image {
+    width: max(200px, 14rem);
+    height: max(200px, 15rem);;
+    object-fit: cover;
+    object-position: center;
+}
+

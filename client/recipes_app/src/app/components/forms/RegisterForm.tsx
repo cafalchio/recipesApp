@@ -4,6 +4,7 @@ import MyTextInput from './MyTextInput';
 import { useStore } from '../../stores/store';
 import * as Yup from 'yup';
 
+
 const RegisterForm = () => {
     const { userStore } = useStore();
     const { createUser } = userStore;
@@ -18,12 +19,11 @@ const RegisterForm = () => {
               repeatPassword: ''
             }}
             validationSchema={Yup.object({
-              firstName: Yup.string(),
-              lastName: Yup.string(),
+              firstName: Yup.string().max(20, 'Must be 20 characters or less'),
+              lastName: Yup.string().max(20, 'Must be 20 characters or less'),
               email: Yup.string().required().email(),
               password: Yup.string().required('No password provided.') 
-              .min(8, 'Password is too short - should be 8 chars minimum.')
-              .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
+              .min(8, 'Password is too short - should be 8 chars minimum.'),
               repeatPassword: Yup.string().required().oneOf([Yup.ref('password'), ""], 'Passwords must match')
             })}
             onSubmit={values => {
@@ -36,14 +36,15 @@ const RegisterForm = () => {
         }}
         >
         {({handleSubmit}) => (
-            <Form className='ui form' onSubmit={handleSubmit} autoComplete='off'>
-                <MyTextInput name='firstName' placeholder='First Name' />
-                <MyTextInput name='lastName' placeholder='Last Name'  />
-                <MyTextInput name='email' placeholder='Email'  />
-                <MyTextInput name='password' placeholder='Password' type='password' />
-                <MyTextInput name='repeatPassword' placeholder='Repeat Password' type='password' />
-                <Button positive content='Register' type='submit' fluid />
-            </Form>
+          
+              <Form onSubmit={handleSubmit} autoComplete='off'>
+                  <MyTextInput name='firstName' placeholder='First Name' />
+                  <MyTextInput name='lastName' placeholder='Last Name'  />
+                  <MyTextInput name='email' placeholder='Email'  />
+                  <MyTextInput name='password' placeholder='Password' type='password' />
+                  <MyTextInput name='repeatPassword' placeholder='Repeat Password' type='password' />
+                  <Button positive content='Register' type='submit' fluid />
+              </Form>
         )}
 
         </Formik>
