@@ -14,9 +14,17 @@ axios.defaults.baseURL = "http://localhost:8000/api/";
 
 const responseBody = <T>(response: AxiosResponse<T>) => response.data;
 
+// add access token to request header
+axios.interceptors.request.use(async (config) => {
+    if (process.env.NODE_ENV === "development") await sleep(500);
+    const token = window.localStorage.getItem("accessToken");
+    if (token) config.headers.Authorization = `Bearer ${token}`;
+    return config;
+});
+
 axios.interceptors.response.use(
     async (response) => {
-        if (process.env.NODE_ENV === "development") await sleep(1000);
+        if (process.env.NODE_ENV === "development") await sleep(500);
         return response as AxiosResponse<any>;
     },
     (error: AxiosError) => {
@@ -26,7 +34,7 @@ axios.interceptors.response.use(
                 console.log("bad request");
                 break;
             case 401:
-                console.log("unauthorised");
+
                 break;
             case 403:
                 console.log("forbidden");
@@ -58,7 +66,7 @@ const Accounts = {
 };
 
 const Recipes = {
-    getRecipes: () => requests.get<any>("/recipes/"),
+    getRecipes: () => requests.get<any>("/recipes"),
     getDetail: (id: string) => requests.get<Recipe>(`/recipes/${id}`),
 };
 

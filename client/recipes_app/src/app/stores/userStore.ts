@@ -17,7 +17,7 @@ export default class UserStore {
     }
 
     logout = () => {
-        store.commonStore.setToken(null);
+        store.commonStore.deleteTokens();
         this.user = null;
         router.navigate("/");
     };
@@ -27,8 +27,9 @@ export default class UserStore {
             const response = await agent.Accounts.login(user);
             runInAction(() => {
                 if (response) {
-                    store.commonStore.setToken(response.refresh);
-                    router.navigate("/recipes");
+                    store.commonStore.setRefreshToken(response.refresh);
+                    store.commonStore.setAccessToken(response.access);
+                    router.navigate("/home");
                     console.log(response)
                 }
             });
