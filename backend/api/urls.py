@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import include, path
+import api.views as api_views
 from recipes import views as recipes_views
 from comments import views as comments_views
 from users import views as user_views

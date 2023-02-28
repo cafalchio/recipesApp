@@ -5,7 +5,6 @@ from rest_framework.decorators import api_view
 from .serializer import RegisterUserSerializer
 from rest_framework.permissions import AllowAny
 
-
 class CustomUserCreate(APIView):
     permission_classes = [AllowAny]
     

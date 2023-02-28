@@ -29,6 +29,7 @@ export default class UserStore {
                 if (response) {
                     store.commonStore.setToken(response.refresh);
                     router.navigate("/recipes");
+                    console.log(response)
                 }
             });
         } catch (error) {
